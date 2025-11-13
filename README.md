@@ -47,3 +47,47 @@ Combining traffic interception with dynamic hooks for deeper analysis.
 
 ### 9. **[Interception of Traffic on Android | Setting up an Emulator](https://youtu.be/yWsBhp-Fg3k?si=INFFphetSuWUygu4)**
 Configuring Android emulator networking for MITM, HTTPS interception, and analysis.
+
+## 🔧 Full Android Reverse Engineering Workflow
+
+A compact end-to-end workflow for unpacking, patching, rebuilding, installing, and analyzing Android apps using APKTool + Frida on a rooted emulator.
+
+---
+
+### 📦 1. Unpack & Rebuild APK (APKTool)
+apktool d app.apk -o unpacked
+apktool b unpacked -o app_patched.apk
+
+---
+
+### 🔐 2. Start Rooted Emulator (optional)
+adb root
+
+---
+
+### 🧩 3. Push & Run Frida Server
+adb push frida-server /data/local/tmp/
+adb shell chmod +x /data/local/tmp/frida-server
+adb shell /data/local/tmp/frida-server &
+---
+
+### 📲 4. Install Target APK on the Emulator
+adb install fdroid.apk
+---
+
+### 🧰 5. Install Frida Tools (Host Side)
+python -m venv new_venv
+source new_venv/bin/activate
+pip3 install frida-tools
+---
+
+### 🔍 6. Find the Target Process on the Emulator
+adb shell
+adb top
+---
+
+### 🎯 7. Run Frida Script (example: SSL pinning bypass)
+
+frida -U -p <process_id> -l ssl-pin.js
+frida -U -n com.example.app -c codeshare/(script name from codeshare)
+
