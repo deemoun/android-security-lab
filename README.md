@@ -55,39 +55,67 @@ A compact end-to-end workflow for unpacking, patching, rebuilding, installing, a
 ---
 
 ### 📦 1. Unpack & Rebuild APK (APKTool)
+
+```bash
 apktool d app.apk -o unpacked
 apktool b unpacked -o app_patched.apk
+```
 
 ---
 
 ### 🔐 2. Start Rooted Emulator (optional)
+
+```bash
 adb root
+```
 
 ---
 
 ### 🧩 3. Push & Run Frida Server
+
+```bash
 adb push frida-server /data/local/tmp/
 adb shell chmod +x /data/local/tmp/frida-server
 adb shell /data/local/tmp/frida-server &
+```
+
 ---
 
 ### 📲 4. Install Target APK on the Emulator
+
+```bash
 adb install fdroid.apk
+```
+
 ---
 
 ### 🧰 5. Install Frida Tools (Host Side)
+
+```bash
 python -m venv new_venv
 source new_venv/bin/activate
 pip3 install frida-tools
+```
+
 ---
 
 ### 🔍 6. Find the Target Process on the Emulator
+
+```bash
 adb shell
 adb top
+```
+
 ---
 
 ### 🎯 7. Run Frida Script (example: SSL pinning bypass)
 
+```bash
 frida -U -p <process_id> -l ssl-pin.js
-frida -U -n com.example.app -c codeshare/(script name from codeshare)
+```
 
+### ▶️ Run Script from CodeShare
+
+```bash
+frida -U -n com.example.app -c codeshare/<script_name>
+```
