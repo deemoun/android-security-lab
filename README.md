@@ -48,6 +48,18 @@ Combining traffic interception with dynamic hooks for deeper analysis.
 ### 9. **[Interception of Traffic on Android | Setting up an Emulator](https://youtu.be/yWsBhp-Fg3k?si=INFFphetSuWUygu4)**
 Configuring Android emulator networking for MITM, HTTPS interception, and analysis.
 
+---
+
+### 10. **[Android Reverse Engineering Setup | Part 1. Tools Review](https://youtu.be/jwHrBa3f5i0)**
+In this first episode of my Android Reverse Engineering series, I show how to set up a complete analysis environment for pentesting, security research and malware analysis.
+Tools covered: Frida, Objection, Drozer, Jadx, APKTool, MobSF, etc.
+
+---
+
+### 11. **[Android Reverse Engineering Setup | Part 2. Installing Tools](https://youtu.be/NfGq5BOB70M)**
+In this first episode we are installing the tools on our system.
+Tools covered: Frida, Android Emulator, Android SDK Tools, Android Platform tools, Ghidra
+
 ## 🔧 Full Android Reverse Engineering Workflow
 
 A compact end-to-end workflow for unpacking, patching, rebuilding, installing, and analyzing Android apps using APKTool + Frida on a rooted emulator.
