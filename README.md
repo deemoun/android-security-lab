@@ -60,6 +60,11 @@ Tools covered: Frida, Objection, Drozer, Jadx, APKTool, MobSF, etc.
 In this first episode we are installing the tools on our system.
 Tools covered: Frida, Android Emulator, Android SDK Tools, Android Platform tools, Ghidra
 
+### 12. **[Android App Dev from Scratch — Live Coding](https://www.youtube.com/playlist?list=PL0zZBw8Dq429NOr4MPDZHolp8UoFVuNPI)**
+A practical live-coding series where we build real Android apps from scratch using Android Studio, Jetpack Compose, and AI-assisted development.
+Each stream focuses on implementing new features, improving app architecture, adding security layers, and exploring modern Android development workflows.
+Perfect for beginners and mid-level developers who want to learn Android by watching full real-time builds with clean explanations.
+
 ## 🔧 Full Android Reverse Engineering Workflow
 
 A compact end-to-end workflow for unpacking, patching, rebuilding, installing, and analyzing Android apps using APKTool + Frida on a rooted emulator.
